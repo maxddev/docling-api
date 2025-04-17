@@ -59,7 +59,8 @@ class DoclingDocumentConversion(DocumentConversionBase):
     @staticmethod
     def _setup_default_pipeline_options() -> PdfPipelineOptions:
         pipeline_options = PdfPipelineOptions()
-        pipeline_options.generate_page_images = False
+        pipeline_options.generate_page_images = True # Needs to be on for Formula Enrichment (Default: False)
+        pipeline_options.do_formula_enrichment = True
         pipeline_options.generate_picture_images = True
         pipeline_options.ocr_options = EasyOcrOptions(lang=["fr", "de", "es", "en", "it", "pt"])
 
